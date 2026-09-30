@@ -22,7 +22,7 @@ Monthly FX values mean EUR per one local-currency unit. The demo supports EUR, G
 | Weighted open pipeline | Sum opportunity EUR value × configured stage probability | Rounded per opportunity to cents; won and lost excluded by zero probability |
 | Billable share | Sum billable minutes / sum logged minutes | Hours-weighted, not average of company percentages; not staff-capacity utilization |
 
-No forecasts or ML models are used. Stage probabilities are assumptions, not trained estimates.
+These actuals and KPI calculations do not use forecasts or ML models. Stage probabilities are assumptions, not trained estimates. The optional `portfolio_analytics.predictive` module writes separate experimental company forecasts; it does not change Gold metrics. See [My approach](my-approach.md).
 
 ## Data products
 
