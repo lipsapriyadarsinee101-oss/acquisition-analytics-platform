@@ -10,6 +10,12 @@ Read **[My approach to this Analytics Engineer role](docs/my-approach.md)** for 
 
 ![Portfolio dashboard](docs/dashboard.png)
 
+## Role fit and delivery priorities
+
+My strongest fit for this role is my background in **Python, SQL, ETL, API integration, Power BI and machine learning**. My first priority would be dependable data integration and consistent reporting for Finance and Operations. I would introduce ML and AI where they address clear business needs once that foundation is reliable.
+
+The working project runs locally with **DuckDB and Parquet**. The employer's existing platform uses **Microsoft Fabric**. This repository documents an adaptation path to Fabric that still needs deployment and testing in a Fabric environment; it does not establish production Fabric experience.
+
 ## What is implemented
 
 | Hiring requirement | Working demonstration |
