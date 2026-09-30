@@ -17,8 +17,11 @@ jobs:
       - run: pip install -r requirements.txt
       - run: python -m unittest discover -s tests -v
       - run: python -m portfolio_analytics demo --project demo-build
+      - run: python -m portfolio_analytics.predictive --report preview/report.json --output demo-build/predictive.json
       - uses: actions/upload-artifact@v4
         with:
           name: synthetic-portfolio-report
-          path: demo-build/lakehouse/runs/
+          path: |
+            demo-build/lakehouse/runs/
+            demo-build/predictive.json
           retention-days: 7

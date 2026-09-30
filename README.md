@@ -6,6 +6,8 @@ Built by Lipsa Priyadarshinee. A portfolio project using **only synthetic data**
 
 This project turns incompatible ERP/accounting exports, CRM snapshots, time records and Excel budgets into one documented reporting model. It includes a working local pipeline, Parquet data products, a self-contained interactive dashboard, quality gates, acquisition onboarding and a Microsoft Fabric adaptation guide.
 
+Read **[My approach to this Analytics Engineer role](docs/my-approach.md)** for CV alignment, ERP/CRM integration, lakehouse layers, triggers, Git delivery and ML/AI boundaries.
+
 ![Portfolio dashboard](docs/dashboard.png)
 
 ## What is implemented
@@ -102,6 +104,15 @@ Then run the pipeline. Real endpoints must use HTTPS and follow the documented `
 - `fabric/`: cloud adaptation notebook and release guide.
 - `.github/workflows/ci.yml`: test and package on pull requests/pushes.
 
+## Experimental machine learning
+A dependency-free linear regression example compares company revenue trends with a last-month baseline using chronological validation. It skips insufficient or incomplete histories and keeps forecasts separate from actuals.
+
+```bash
+python -m portfolio_analytics.predictive --report preview/report.json --output work/predictive.json
+```
+
+Outputs include validation folds, model selection scores and source lineage. Synthetic results do not establish production accuracy. No LLM is connected. See [My approach](docs/my-approach.md).
+
 ## Microsoft Fabric
 
 See [Fabric deployment guide](fabric/README.md). The optional bridge imports a validated snapshot into versioned Delta tables and recomputes gold metrics with Spark. Actual workspace integration, identities, security, orchestration schedules and promotion require your Fabric environment and validation there.
@@ -125,7 +136,7 @@ The generated `data/` and `lakehouse/` folders are ignored. The committed genera
 
 ## Validation
 
-14 automated tests pass locally. See [validation record](docs/validation.md) for checks, sample totals and unverified infrastructure/browser-download steps.
+The original pipeline's 14-test validation record is in [validation](docs/validation.md). The predictive extension adds nine focused tests, verified locally, plus a successful run against the committed synthetic report. The existing pipeline suite was not rerun locally for this extension because DuckDB was unavailable; GitHub CI is configured to run all tests.
 
 ## Development boundaries and next steps
 
